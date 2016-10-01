@@ -12,7 +12,6 @@ class LED
   //the pin on the board to which the LED is connected
   int _pin;
 };
-
 LED::LED(int pin)
 {
   _pin=pin;
@@ -164,13 +163,13 @@ Button buttonRed1(11,2);
 LED ledGreen1(5);
 Button buttonGreen1(12,4);
 LED ledWhite1(7);
-Button buttonWhite1(13,6,false,true);
+Button buttonWhite1(13,6);
 LED ledYellow2(21);
 Button buttonYellow2(14,22,true);
 LED ledRed2(19);
-Button buttonRed2(15,25,20);
+Button buttonRed2(15,20,true);
 LED ledGreen2(17);
-Button buttonGreen2(16,25,18);
+Button buttonGreen2(16,18,true);
 LED ledWhite2(15);
 Button buttonWhite2(17,16);
 //Pot pot1(40,29);
@@ -188,7 +187,7 @@ void ChangeChannel()
     CurrentChannel=1;
   }
   digitalWrite(onboardLED, HIGH);
-  delay(100);
+  delay(1000);
   digitalWrite(onboardLED, LOW);
 }
 
@@ -320,7 +319,7 @@ void setup() {
   ledRed2.turnOn();
   ledGreen2.turnOn();
   ledWhite2.turnOn();
-  delay(100);
+  delay(1000);
   ledYellow1.turnOff();
   ledRed1.turnOff();
   ledGreen1.turnOff();
